@@ -2,11 +2,11 @@ id:
   next: Next
   previous: Previous
   name: Name
-  body: Body
+  body: Deskripsi
   link_url: Link URL
-  image: Image
+  image: Gambar
   preview: Preview
-  image_file_name: Image file name
+  image_file_name: Gambar file name
   published: Published
   position: Posisi
   y: 'Ya'
