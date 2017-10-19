@@ -30,7 +30,7 @@ id:
   spree_slider_locations:
     config_name: Slider Lokasi
     config_description: Atur Slider lokasi
-    title: Slider lokasi
-    new_location: lokasi Baru
-    editing_location: ubah lokasi
-    back_to_locations: kembali ke lokasi
+    title: Slider Lokasi
+    new_location: Lokasi Baru
+    editing_location: Ubah lokasi
+    back_to_locations: Kembali ke lokasi
