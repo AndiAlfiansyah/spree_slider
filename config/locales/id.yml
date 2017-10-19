@@ -8,29 +8,29 @@ id:
   preview: Preview
   image_file_name: Image file name
   published: Published
-  position: Position
-  y: 'Yes'
-  n: 'No'
+  position: Posisi
+  y: 'Ya'
+  n: 'Tidak'
 
   activerecord:
     models:
       spree/slide: Slide
 
   spree_slider:
-    config_name: Spree Slider
-    config_description: Manage Spree Slider contents
+    config_name: Slider
+    config_description: Atur Slide Konten
     title: Slides
-    new_slide: New Slide
-    editing_slide: Editing Slide
-    back_to_slides: Back to Slides
-    placeholder_name: Leave blank to use product name
-    placeholder_link_url: Leave blank to use product url
-    image_tip: Default first product image
+    new_slide: Slide Baru
+    editing_slide: Ubah Slide
+    back_to_slides: Kembali ke Slides
+    placeholder_name: Mari kita gunakan nama produk
+    placeholder_link_url: Mari kita gunakan produk url
+    image_tip: Gambar Standar Pertama Produk
 
   spree_slider_locations:
-    config_name: Spree Slider Locations
-    config_description: Manage Spree Slider Locations
-    title: Slider Locations
-    new_location: New Location
-    editing_location: Editing Location
-    back_to_locations: Back to Locations
+    config_name: Slider Lokasi
+    config_description: Atur Slider lokasi
+    title: Slider lokasi
+    new_location: lokasi Baru
+    editing_location: ubah lokasi
+    back_to_locations: kembali ke lokasi
