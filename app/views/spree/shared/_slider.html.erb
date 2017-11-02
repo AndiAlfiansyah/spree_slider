@@ -1,9 +1,38 @@
 <% if slider.size > 0 %>
 
-  <section class="hero" data-flickity='{ "autoPlay": 6000,"pauseAutoPlayOnHover": false }'>
+  <%# generate a random number for the carousel id - in case you want multiple per page %>
+  <% cid ||= Random.rand(6000) %>
 
+  <div id="carousel-slider-<%= cid %>" class="carousel slide" data-ride="carousel" <%= (defined? interval) != nil ? "data-interval=#{interval.to_s}" : "" %>>
+    <%# Indicators %>
+    <ol class="carousel-indicators">
+      <% slider.each_with_index do |slide, index| %>
+        <li data-target="#carousel-prod-<%= cid %>" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>"></li>
+      <% end %>
+    </ol>
+
+    <%# Wrapper for slider %>
+    <div class="carousel-inner">
+      <% slider.each_with_index do |slide, index| %>
+        <div class="item <%= index == 0 ? 'active' : '' %>">
+          <%= link_to image_tag(slide.slide_image.url, alt: slide.slide_name), url_for(slide.slide_link) %>
+          <div class="carousel-caption">
+            <h3><%= slide.slide_name %></h3>
+            <% unless slide.body.blank? %>
+              <p><%= slide.body %><p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+
+  </div>
+
+
+  <section class="hero" data-flickity='{ "autoPlay": 6000,"pauseAutoPlayOnHover": false }'>
+<% slider.each_with_index do |slide, index| %>
   <div class="hero-cell primary-color-slider">
-    <% slider.each_with_index do |slide, index| %>
     <div class="hero-cell-bg item <%= index == 0 ? 'active' : '' %>" style="background-image: url('<%= slide.slide_image.url %>');"></div>
     <div class="hero-cell-content">
       <div class="hero-cell-text-left">
@@ -31,7 +60,7 @@
     <% end %>
   </div>
 
+<% end %>
 
 </section>
 
-<% end %>
