@@ -18,13 +18,6 @@
 
 <div class="row">
   <div class="col-md-6">
-    <%= f.field_container :sub_head do %>
-      <%= f.label :sub_head, t(:sub_head) %><br>
-      <%= f.text_field :name, class: 'fullwidth form-control', placeholder: t('spree_slider.placeholder_name') %>
-    <% end %>
-  </div>
-
-  <div class="col-md-6">
     <%= f.field_container :name do %>
       <%= f.label :title, t(:title) %><br>
       <%= f.text_field :name, class: 'fullwidth form-control', placeholder: t('spree_slider.placeholder_name') %>

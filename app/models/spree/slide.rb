@@ -8,14 +8,11 @@ class Spree::Slide < ActiveRecord::Base
 
   scope :published, -> { where(published: true).order('position ASC') }
 
+  belongs_to :product
 
   def initialize(attrs = nil)
     attrs ||= { published: true }
     super
-  end
-
-  def slide_sub_head
-    sub_head.blank?
   end
 
   def slide_name

@@ -18,7 +18,7 @@ module Spree
       end
 
       def slide_params
-        params.require(:slide).permit(:sub_head, :name, :body, :link_url, :published, :image, :position)
+        params.require(:slide).permit(:name, :body, :link_url, :published, :image, :position)
       end
     end
   end
