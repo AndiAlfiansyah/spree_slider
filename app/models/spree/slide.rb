@@ -14,6 +14,10 @@ class Spree::Slide < ActiveRecord::Base
     super
   end
 
+  def slide_sub_head
+    sub_head.blank?
+  end
+
   def slide_name
     name.blank? && product.present? ? product.name : name
   end
