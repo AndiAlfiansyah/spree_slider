@@ -1,35 +1,37 @@
-<% if slider.size > 0 %>
-
+<% if slider.size > 0%>
   <section class="hero" data-flickity='{ "autoPlay": 6000,"pauseAutoPlayOnHover": false }'>
   <% slider.each_with_index do |slide,index| %>
-    <div class="hero-cell primary-color-slider">
-      <div class="hero-cell-bg item <%= index == 0 ? 'active' : '' %>" style="background-image: url('<%= slide.slide_image.url %>');"></div>
-      <div class="hero-cell-content">
-        <div class="hero-cell-text-left">
-          <div class="hero-cell-text">
-            <h6 class="hero-subhead">Exclusive Brand Deals</h6>
-            <h2 class="hero-cell-title"><%= slide.slide_name %></h2>
+    <% if slide.taxons_id == 0 %>
+      <div class="hero-cell primary-color-slider">
+        <div class="hero-cell-bg item <%= index == 0 ? 'active' : '' %>" style="background-image: url('<%= slide.slide_image.url %>');"></div>
+        <div class="hero-cell-content">
+          <div class="hero-cell-text-left">
+            <div class="hero-cell-text">
+              <h6 class="hero-subhead">Exclusive Brand Deals</h6>
+              <h2 class="hero-cell-title"><%= slide.slide_name %></h2>
+            </div>
+          </div>
+          <div class="hero-cell-text-right">
+            <div class="hero-cell-text">
+              <% unless slide.body.blank? %>
+                  <p><%= slide.body %><p>
+              <% end %>
+              <%= link_to url_for(slide.slide_link) do %>
+                Go to link <i class="la la-arrow-right"></i>
+              <% end%>
+            </div>
           </div>
         </div>
-        <div class="hero-cell-text-right">
-          <div class="hero-cell-text">
-            <% unless slide.body.blank? %>
-                <p><%= slide.body %><p>
-            <% end %>
-            <%= link_to url_for(slide.slide_link) do %>
-              Go to link <i class="la la-arrow-right"></i>
-            <% end%>
-          </div>
+        <div class="hero-cell-angle">
+          <svg class="hero-cell-angle-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 318.879">
+            <polygon class="hero-cell-angle-path" points="1.12 318.879 600 318.879 600 0 " />
+          </svg>
         </div>
       </div>
-      <div class="hero-cell-angle">
-        <svg class="hero-cell-angle-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 318.879">
-          <polygon class="hero-cell-angle-path" points="1.12 318.879 600 318.879 600 0 " />
-        </svg>
-      </div>
-    </div>
+   <% end %>
+
   <% end %>
 
-</section>
+  </section>
 
 <% end %>

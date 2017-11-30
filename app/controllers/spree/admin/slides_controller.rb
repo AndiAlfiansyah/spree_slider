@@ -4,9 +4,14 @@ module Spree
       respond_to :html
 
       def index
-        @slides = Spree::Slide.order(:position)
+        @slides = Spree::Slide.order(:taxons_id)
+        @taxonomies = Spree::Taxonomy.order(:name)
+        # @slides = @slides.taxons
       end
 
+      def collection
+        @taxonomies = Spree::Taxonomy.order(:name)
+      end
       private
 
       def location_after_save

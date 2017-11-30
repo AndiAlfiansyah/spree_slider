@@ -1,5 +1,5 @@
 class Spree::Slide < ActiveRecord::Base
-
+  belongs_to :taxons, class_name: 'Spree::Taxon', optional: true
   has_attached_file :image,
                     url: '/spree/slides/:id/:style/:basename.:extension',
                     path: ':rails_root/public/spree/slides/:id/:style/:basename.:extension',
