@@ -3,7 +3,7 @@
   <% slider.each_with_index do |slide,index| %>
     <% if slide.taxons_id == 0 %>
       <div class="hero-cell primary-color-slider">
-        <div class="hero-cell-bg item <%= index == 0 ? 'active' : '' %>" style="background-image: url('<%= slide.slide_image.url %>');"></div>
+        <div class="hero-cell-bg item <%= index == 0 ? 'active' : '' %>" style="background-image: image_path('<%= slide.slide_image.url %>');"></div>
         <div class="hero-cell-content">
           <div class="hero-cell-text-left">
             <div class="hero-cell-text">
